@@ -1,7 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { SpinnerCircular } from 'spinners-react';
-
 export default function Weather(props) {
     function handleResponse(response) {
         alert(`the Weather in ${response.data.name} is ${response.data.main.temp}`)
