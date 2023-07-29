@@ -4,17 +4,13 @@ import './App.css';
 
 
 
-function App() {
+export default function App(){
   return (
     <div className="App">
-      <header className="App-header">
         <Weather />
-     </header>
     </div>
     
   );
-  
-
 
   }
-export default App;
+

@@ -48,25 +48,6 @@ li:first-letter {
   padding: 15px;
   box-shadow: 0 0 10px rgb(17, 17, 252);
 }
-.btn {
-  display: flex;
-  background-image: linear-gradient(#0756bd, #0e23e0);
-  border: 0;
-  border-radius: 4px;
-  box-shadow: rgba(7, 4, 184, 0.3) 0 5px 20px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  font-family: Montserrat,sans-serif;
-  font-size: .9em;
-  margin: 5px;
-  padding: 5px 10px;
-  text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  letter-spacing: 2px;
-}
 
 .weather-app {
   padding: 10px;
@@ -81,15 +62,81 @@ li:first-letter {
   margin-right: 5px;
   height: 64px;
   width: 64px;
-  text-shadow: 0 0 5px rgb(1, 10, 31);
-}
 
+}
+#search-form {
+  display: flex;
+  justify-content: space-between;
+  font: white;
+ 
+}
+.btn-primary {
+  color:  rgb(255, 255, 255);
+  cursor: pointer;
+  border:0.5px rgb(253, 251, 251,0.5) solid;
+  margin-left: 5px;
+  padding: 10px auto ;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-size: 12px;
+}
+.btn-primary:hover {
+  background-color:  rgb(255, 255, 255,0.3);
+  cursor: pointer;
+  border:0.5px rgb(253, 251, 251,0.5) solid;
+  padding: 10px auto ;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-size: 12px;
+}
+search-form .col-12 {
+  border-radius: 20px;
+  border:0.5px rgb(255, 255, 255, 0.5) solid;
+  padding: 30px auto;
+  background-color:rgba(255, 251, 251, 0.5);
+ outline: none;
+ font:white;
+ letter-spacing: 1.5px;
+ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+ }
+
+#search-form input {
+  width: 100%;
+  height: 30px;
+  border: 0.5px rgb(255, 253, 253, 0.5) solid;
+  border-radius: 20px;
+  background-color: transparent;
+  outline: none;
+  font:rgb(255, 255, 255, 0.7);
+  letter-spacing: 3px;
+  padding: 30px auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#search-form input:hover {
+  background-color:  rgb(255, 255, 255,0.2);
+  cursor: pointer;
+  border:0.5px rgb(253, 251, 251,0.5) solid;
+  padding: 10px auto ;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-size: 12px;
+
+}
+#city-input::placeholder {
+  color: rgb(255, 255, 255, 0.6);
+ letter-spacing: 5px;
+}
+#city-input {
+  padding: 10px;
+  font-size: 12px;
+}
 .weather-temperature strong {
   color: white;
   font-size: 40px;
   line-height: 1;
   font-weight: 400;
   text-shadow: 0 0 5px rgb(1, 10, 31);
+}
+a {
+  cursor: pointer;
+  color: white;
 }
 
 .weather-temperature .units {
@@ -130,26 +177,11 @@ li:first-letter {
   font-size: 16px;
 }
 .git footer {
-  justify-content: center;
+  text-align: center;
   font-size: 3px;
 }
-
-@media only screen and (max-width: 400px) {
-  .col-9,
-  .col-3 {
-    flex: 0 0 50%;
-    max-width: 75%;
-  }
-  #temperature {
-    font-size: 20px;
-  }
-  .weather-forecast-temperatures {
-    font-size: 14px;
-  }
-  .col-2 {
-    justify-content: space-evenly;
-    padding-left: 0;
-    padding-right: 5px;
+@media (min-width: 576px) {
+  #search-form .col-12.col-md-9 {
+    width: 70%;
   }
 }
-
