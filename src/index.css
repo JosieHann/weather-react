@@ -17,13 +17,13 @@ h1 {
 }
 #city {
   font-size: 40px;
-  line-height: 50px;
   text-shadow: 1px 1px rgb(0, 0, 63);
   margin: 5px;
 }
 ul {
-  margin-top: 5px;
-  padding: 10px;
+  margin: 0;
+  padding: 5px;
+  margin-bottom: 10px;
 
 }
 
@@ -35,7 +35,6 @@ li {
   text-shadow: 1px 1px rgb(0, 0, 80);
   font-size: 16px;
   font-weight: 100;
-  line-height: 50px;
   letter-spacing: 1px;
   opacity: 0.7;
 
@@ -46,33 +45,35 @@ li:first-letter {
 }
 
 .weather-app-wrapper {
-  max-width: 500px;
+  max-width: 450px;
   margin: 30px auto;
   background: radial-gradient(
     circle at 10% 20%,
-    rgb(11, 103, 196) 0%,
-    rgb(4, 66, 128) 90%
+    rgb(11, 103, 196,0.8) 0%,
+    rgb(4, 66, 128, 0.8) 90%
   );
   border-radius: 10px;
-  opacity: 0.7;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   padding: 15px;
- 
+  box-shadow: rgba(10, 3, 75, 0.35) 0px 5px 15px;
+  border: 0.5px rgba(45, 106, 219, 0.5) solid;
+
 }
 
 .weather-app {
  
-  justify-content: center;
+  justify-content: space-evenly;
   border-radius: 9px;
   border: rgba(119, 119, 253, 0.7); 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 8px;
+
 }
 
 .overview {
-  margin-bottom: 0;
-  text-align:  center;
- 
+  margin-bottom: 5px;
+  text-align: center;
+  
 }
 .col-6 {
   text-align: center;
@@ -83,22 +84,31 @@ img  {
 }
 
 .weather-temperature img {
-  height: 70px;
-  width: 60px;
-
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+  text-shadow: 1 px 1px rgb(1, 10, 31);
 }
 #search-form {
   display: flex;
-  justify-content: space-between;
-  font: white;
-  margin-bottom: 0px;
+  justify-content: center;
+  font-size: 16px;
+  border-radius: 90px;
+  padding: 20px;
+  width: 400px;
  
+}
+a{
+  cursor: pointer;
+  color: rgb(255, 255, 255, 0.8);
+  outline: rgb(8, 8, 43);
+
 }
 .btn-primary {
   color:  rgb(255, 255, 255);
   cursor: pointer;
   border:0.5px rgb(253, 251, 251,0.5) solid;
-  margin-left: 5px;
+  margin-left: 10px;
   padding: 10px auto ;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-size: 12px;
@@ -151,6 +161,9 @@ search-form .col-12 {
 #city-input {
   padding: 10px;
   font-size: 12px;
+  caret-color: white;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .weather-temperature strong {
   color: white;
@@ -159,10 +172,6 @@ search-form .col-12 {
   font-weight: 400;
   text-shadow: 1px 1px rgb(1, 10, 31);
   letter-spacing: 0.5px;
-}
-a {
-  cursor: pointer;
-  color: white;
 }
 
 .weather-temperature .units {
@@ -187,7 +196,9 @@ a {
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 30px auto;
-  
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  border-radius: 8px;
+ 
 }
 
 .col {
@@ -198,19 +209,18 @@ a {
 }
 .weather-forecast {
   margin-top: 20px;
-  margin-bottom: 20px;
+  text-align: center;
   color: white;
   justify-content: space-evenly;
-  text-shadow: 1px 1px rgb(1, 1, 80);
+  text-shadow: 0 0 5px rgb(1, 10, 31);
   letter-spacing: 0.5px;
-  
 }
 
 .weather-forecast-date {
   font-size: 16px;
   opacity: 0.9;
   text-decoration: underline;
-  text-shadow: 1px 1px rgb(2, 2, 68);
+  text-shadow: 0 0 5px rgb(1, 10, 31);
   letter-spacing: 0.5px;
 }
 .col-2 {
@@ -225,7 +235,7 @@ a {
 }
 .weather-forecast-temperatures {
   font-size: 16px;
-  text-shadow: 1px 1px rgb(2, 2, 78);
+  text-shadow: 1px 1px rgb(3, 3, 112);
 letter-spacing: 0.5px;
 }
 .git {
@@ -240,6 +250,9 @@ footer {
   font-size: 12px;
  letter-spacing: 1.5px;
  text-shadow: 1px 1px rgb(245, 245, 245, 0.4);
+ border-radius: 8px;
+ text-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+ 
 
 }
 @media (min-width: 576px) {
