@@ -125,7 +125,7 @@ import axios from "axios";
               forecastDay.condition.icon
             }.png" alt="Clear"
             id="icons"
-            
+            width="60px"
           />
           <div class="weather-forecast-temperatures">
             <span class="weather-forecast-temperature-max">

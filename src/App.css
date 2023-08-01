@@ -52,16 +52,12 @@ img  {
 .weather-app-wrapper {
   max-width: 450px;
   margin: 30px auto;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgba(31, 105, 243, 0.8) 0%,
-    rgba(19, 37, 138, 0.7) 90%
-  );
+  background:linear-gradient(114.9deg, rgba(1, 24, 87, 0.8) 8.3%, rgba(2, 37, 119, 0.7) 41.6%, rgb(0, 110, 213, 0.8) 93.4%);
   border-radius: 10px;
+  border: linear-gradient(114.9deg, rgba(1, 24, 87, 0.8) 8.3%, rgba(2, 37, 119, 0.7) 41.6%, rgb(0, 110, 213, 0.8) 93.4%);
   padding-bottom: 20px;
   padding: 15px;
-  box-shadow: rgba(36, 45, 126, 0.56) 0px 22px 70px 4px;
-
+  box-shadow: rgba(17, 17, 26, 0.5) 0px 1px 0px, rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.5) 0px 16px 48px;
 }
 a{
 cursor: pointer;
@@ -143,8 +139,7 @@ search-form .col-12 {
 .weather-app {
   justify-content: space-evenly;
   border-radius: 9px;
-  border: rgba(119, 119, 253, 0.7); 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
   border-radius: 8px;
   opacity: 0.7;
 }
@@ -219,6 +214,7 @@ img  {
   justify-content: space-evenly;
   text-shadow: 0 0 5px rgb(1, 10, 31);
   letter-spacing: 0.5px;
+  margin-bottom: 25px;
 }
 
 .weather-forecast-date {
@@ -228,7 +224,7 @@ img  {
   letter-spacing: 0.5px;
 }
 .col-2 {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 15px;
   padding: 8px;
   border-radius: 8px;
 }
