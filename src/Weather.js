@@ -1,144 +1,71 @@
-import './App.css';
+import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
+import "./App.css";
 
-    export default function formatDate(date) {
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let ampm = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    hours = hours < 10 ? "0" + hours : hours;
-  
-    let dayIndex = date.getDay();
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ];
-    let day = days[dayIndex];
-  
-    return `${day} ${hours}:${minutes} ${ampm}`;
-  }
-  
-  function formatday(timestamp) {
-    let date = new Date(timestamp * 1000);
-    let day = date.getDay();
-    let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-  
-    return days[day];
-  }
-  
-  let dateElement = document.querySelector("#date");
-  let currentTime = new Date();
-  dateElement.innerHTML = formatDate(currentTime);
-  
-  function search(event) {
-    event.preventDefault();
-    let cityElement = document.querySelector("#city");
-    let cityInput = document.querySelector("#city-input");
-    cityElement.innerHTML = cityInput.value;
-  
-    searchCity(cityInput.value);
-  }
-  let searchform = document.querySelector("#search-form");
-  searchform.addEventListener("submit", search);
-  
-  function searchCity(city) {
-    let apiKey = "2c133oabdb09a4tc70345f314f78b4fb";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial&metric`;
-    axios.get(apiUrl).then(showTemperature);
-  }
-  searchCity("Pasadena,Maryland,Usa");
-  function showTemperature(response) {
-    console.log(response);
-    const temperature = Math.round(response.data.temperature.current);
-    const h1 = document.querySelector("#city");
-    const windSpeed = response.data.wind.speed;
-    const windUnit = "mph";
-    const windElement = document.querySelector("#wind");
-    const humidityElement = document.querySelector("#humidity");
-    const temperatureElement = document.querySelector("#temperature");
-    const description = document.querySelector("#description");
-    const icon = response.data.condition.icon;
-    const displayIcon = document.querySelector("#icon");
-    displayIcon.setAttribute(
-      "src",
-      `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
-    );
-  
-    h1.innerHTML = response.data.city;
-    temperatureElement.innerHTML = `${temperature}°F`;
-    windElement.innerHTML = `Wind: ${windSpeed} ${windUnit}`;
-    description.innerHTML = response.data.condition.description;
-    humidityElement.innerHTML = response.data.temperature.humidity;
-    fahrenheitTemperature = response.data.temperature.current;
-    getForecast(response.data.coordinates);
-  }
-  let fahrenheitTemperature = null;
-  
-  function convertToFahrenheit(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  }
-  
-  let fahrenheitLink = document.querySelector("#fahrenheit");
-  fahrenheitLink.addEventListener("click", convertToFahrenheit);
-  
-  function convertToCelsius(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  }
-  
-  let celsiusLink = document.querySelector("#celsius");
-  celsiusLink.addEventListener("click", convertToCelsius);
-  
-  function getForecast(coordinates) {
-    console.log(coordinates);
-    let apiKey = "2c133oabdb09a4tc70345f314f78b4fb";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
-    console.log(apiUrl);
-    axios.get(apiUrl).then(displayForecast);
-  }
-  function displayForecast(response) {
-    let forecast = response.data.daily;
-    let forecastElement = document.querySelector("#forecast");
-  
-    let forecastHTML = `<div class="row">`;
-    forecast.forEach(function (forecastDay, index) {
-      if (index > 0 && index < 7) {
-        forecastHTML =
-          forecastHTML +
-          `
-        <div class="col-2">
-          <div class="weather-forecast-date">${formatday(forecastDay.time)}</div>
-  
-          <img 
-            src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-              forecastDay.condition.icon
-            }.png" alt="Clear"
-            id="icons"
-            width="60px"
-          />
-          <div class="weather-forecast-temperatures">
-            <span class="weather-forecast-temperature-max">
-              ${Math.round(forecastDay.temperature.maximum)}° </span>
-            <span class="weather-forecast-temperature-min">
-            ${Math.round(forecastDay.temperature.minimum)}° </span>
-          </div>
-        </div>
-        `;
-      }
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
     });
-  
-    forecastHTML += `</div>`;
-    forecastElement.innerHTML = forecastHTML;
   }
-  
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "7d478f69e1b2f5d563653f13f5f91d76";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city.."
+                className="form-control"
+                autoFocus="on"
+                onChange={handleCityChange}
+              />
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-primary w-100"
+              />
+            </div>
+          </div>
+        </form>
+        <WeatherInfo data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
+      </div>
+    );
+  } else {
+    search();
+    return "Loading...";
+  }
+}
