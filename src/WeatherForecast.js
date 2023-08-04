@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./WeatherForecast.css";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
@@ -17,11 +17,10 @@ export default function WeatherForecast(props) {
   }
 
   function load() {
-    let apiKey = "3f6be1c407b0d9d1933561808db358ba";
+    let apiKey = "2c133oabdb09a4tc70345f314f78b4fb";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
-
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric&imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
 

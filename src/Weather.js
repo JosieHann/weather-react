@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
-import "./App.css";
+import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -32,8 +32,8 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "7d478f69e1b2f5d563653f13f5f91d76";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    const apiKey = "2c133oabdb09a4tc70345f314f78b4fb";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial&metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
