@@ -16,11 +16,16 @@ export default function WeatherInfo(props) {
         <div className="col-6">
           <div className="d-flex">
             <div>
-             
             </div>
-
             <div>
-              <WeatherTemperature celsius={props.data.temperature} />
+            <WeatherTemperature fahrenheit={props.data.temperature} />
+            </div>
+            <div>
+            <img
+                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-day.png"
+                alt="Clear"
+                id="icon"
+              />
             </div>
           </div>
         </div>
