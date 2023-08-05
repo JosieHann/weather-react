@@ -1,8 +1,27 @@
 .WeatherForecast {
-    text-align: center;
+    justify-content: space-evenly;
+    padding: 5px;
+    display: flex;
+    flex-direction: row; 
+    letter-spacing: 1px;
+    outline: 3px rgb(1, 1, 36);
+    border-radius: 8px;
   }
-  
+  .WeatherForecast-day {
+    text-decoration: underline;
+    margin-bottom: 3px;
+    font-weight: bold;
+    
+  }
+  .col {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 17px;
+    border-radius: 8px;
+    
+    
+  }
   .WeatherForecast-temperature-min {
-    opacity: 0.6;
+    opacity: 0.8;
     margin-left: 5px;
   }

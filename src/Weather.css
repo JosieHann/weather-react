@@ -1,16 +1,20 @@
 .Weather {
     font-family: arial, sans-serif;
-    border: 1px solid #dadde1;
     padding: 16px;
-    border-radius: 4px;
-    color: rgb(135, 135, 135);
+    color: rgba(247, 244, 244, 0.8);
+    outline: 1px rgb(0, 0, 36);
   }
   
   .Weather h1 {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 100;
     margin: 20px 0 0 0;
     line-height: 29px;
+    color: white;
+    outline: 1px rgb(1, 1, 54);
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
   }
   
   .Weather ul {
@@ -23,27 +27,56 @@
     font-weight: 100;
     line-height: 19px;
     list-style: none;
+    opacity: 0.8;
+    outline: 1px rgb(1, 1, 51);
+    display: flex;
+    justify-content: center;
+    margin: 5px;
   }
-  
-  .Weather .temperature {
+ 
+  .Weather .temperature  {
     font-weight: bold;
-    color: rgb(33, 33, 33);
-    font-size: 64px;
+    color: rgb(247, 246, 246, 0.9);
+    font-size: 60px;
     line-height: 64px;
-    margin-left: 5px;
-    font-weight: 400;
-    margin-left: 10px;
-  }
-  
-  .Weather canvas {
+    outline: 2px rgb(1, 1, 61);
+    display: inline-flex;
+    justify-content: center;
     margin: 10px auto;
   }
-  
+
+  .container-temp{
+    display: flex;
+    justify-content: center;
+    margin-right: 0px;
+    margin-left: 20px;
+    outline: 2px rgb(1, 1, 49);
+  }
   .Weather .unit {
-    color: rgb(33, 33, 33);
-    font-size: 16px;
+    color: rgb(248, 242, 242, 0.7);
+    font-size: 22px;
     font-weight: 400;
     position: relative;
     line-height: 1;
     top: -34px;
+    display: inline-flex;
+    justify-content: center;
+    outline: 1px rgb(2, 2, 49);
   }
+  .WeatherInfo {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+  .col-6 {
+    display: block;
+    justify-content: space-evenly;
+  }
+  .row-weather{
+    display: flex;
+    justify-content:space-evenly;
+    
+  }
+ 
