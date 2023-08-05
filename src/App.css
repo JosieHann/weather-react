@@ -1,6 +1,7 @@
 .App {
   max-width: 500px;
   margin: 30px auto;
+  margin-bottom: 10px;
   background:linear-gradient(114.9deg, rgba(1, 24, 87, 0.8) 8.3%, rgba(2, 37, 119, 0.7) 41.6%, rgb(0, 110, 213, 0.8) 93.4%);
   border-radius: 10px;
   padding-bottom: 20px;
@@ -12,14 +13,24 @@ body {
   background-size: cover;
   background-repeat:none;
 }
-.App footer a {
-  font-size: 16px;
-  margin: 10px 0;
+ footer  {
+  font-size: 14px;
   letter-spacing: 1.5px;
  text-shadow: 1px 1px rgba(7, 7, 7, 0.4);
  border-radius: 8px;
- color: rgb(255, 255, 255,0.7);
-
+ color: rgb(33, 33, 128);
+ display: flex;
+ justify-content: center;
+}
+footer a {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+a {
+  display: flex;
+  justify-content: center;
+  color: rgb(38, 38, 134);
+  font-size: 14px;
 }
 .form-control {
   width:390px;

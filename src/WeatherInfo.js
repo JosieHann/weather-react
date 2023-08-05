@@ -21,11 +21,7 @@ export default function WeatherInfo(props) {
             <WeatherTemperature fahrenheit={props.data.temperature} />
             </div>
             <div>
-            <img
-                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-day.png"
-                alt="Clear"
-                id="icon"
-              />
+            <img src={props.data.icon} alt="Clear" id="icon" />
             </div>
           </div>
         </div>
