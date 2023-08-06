@@ -12,7 +12,7 @@ export default function WeatherInfo(props) {
         <img src={props.data.icon} alt="Clear" id="icon" />
       </div>
       <div>
-        <WeatherTemperature fahrenheit={props.data.temperature} />
+        <WeatherTemperature fahrenheit={props.data.temperature}/>
       </div>
       <div>
       <h1>{props.data.city}</h1>
