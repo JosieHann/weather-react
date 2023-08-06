@@ -18,9 +18,7 @@ export default function WeatherForecastDay(props) {
     let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
     return days[day];
   }
-  function iconUrl() {
-    return "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png";
-  }
+
   return (
     <div>
       <div className="WeatherForecast-day">{day()}</div>
@@ -33,8 +31,8 @@ export default function WeatherForecastDay(props) {
         </span>
       </div>
       <div className="WeatherForcast-Day">
-        <img src={iconUrl()} alt={props.data.description} />
+        <img src={props.data.condition.icon_url} alt={props.data.description} />
       </div>
     </div>
   );
-  }
+}
