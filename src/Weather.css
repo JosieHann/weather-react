@@ -79,4 +79,9 @@
     justify-content:space-evenly;
     
   }
- 
+ img {
+  width: 42px;
+ }
+ #icon {
+  width: 90px;
+ }

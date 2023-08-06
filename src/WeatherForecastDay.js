@@ -16,14 +16,14 @@ export default function WeatherForecastDay(props) {
     let day = date.getDay();
 
     let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-
     return days[day];
   }
-
+  function iconUrl() {
+    return "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png";
+  }
   return (
     <div>
       <div className="WeatherForecast-day">{day()}</div>
-     
       <div className="WeatherForecast-temperatures">
         <span className="WeatherForecast-temperature-max">
           {maxTemperature()}
@@ -32,6 +32,9 @@ export default function WeatherForecastDay(props) {
           {minTemperature()}
         </span>
       </div>
+      <div className="WeatherForcast-Day">
+        <img src={iconUrl()} alt={props.data.description} />
+      </div>
     </div>
   );
-}
+  }
