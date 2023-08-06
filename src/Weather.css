@@ -58,7 +58,7 @@
     justify-content: center;
     margin: 10px auto;
     text-shadow:1px 1px 1px rgba(0, 0, 37);
-  }
+      }
 
   .container-temp{
     display: flex;
@@ -76,6 +76,7 @@
     top: -34px;
     display: inline-flex;
     justify-content: center;
+  
    
   }
   .WeatherInfo {
