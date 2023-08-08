@@ -11,7 +11,9 @@ export default function App() {
         </div>
       </div>
       <footer>
-  This project was coded by Josie Hann 
+  This project was coded by<a href="https://sitesiren-josie-portfolio.netlify.app/"
+  target="_blank"
+  rel= "noopener noreferrer">Josie Hann</a>
   <a
     href="https://github.com/JosieHann/weather-react/blob/master/src/Weather.js"
     target="_blank"

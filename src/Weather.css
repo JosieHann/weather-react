@@ -2,7 +2,7 @@
   background-image: linear-gradient(rgba(5, 30, 95, 0.2), rgba(4, 14, 102, 0.1)),url(./image-img.jpg/sky1.jpg);
   background-size: cover;
   background-repeat:none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Google Sans,Roboto,arial,sans-serif;
     padding: 16px;
     color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
@@ -23,12 +23,14 @@
   p{
     display: flex;
     justify-content: left;
-  font-family: 'Courier New', Courier, monospace;
-  text-shadow: rgba(0, 0, 0, 0.40) 0px 3px 6px, rgba(0, 0, 0, 0.50) 0px 3px 6px;
+  font-family: Google Sans,Roboto,arial,sans-serif;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
    border-radius: 10px;
    margin: 0;
    opacity: 0.9;
-   
+   letter-spacing: 0.5px;
   }
   
   .Weather ul {
@@ -52,7 +54,7 @@
   .Weather .temperature  {
     font-weight: bold;
     color: rgba(248, 248, 250, 0.9);
-    font-size: 60px;
+    font-size: 68px;
     line-height: 64px;
     display: inline-flex;
     justify-content: center;
@@ -67,22 +69,28 @@
     margin-left: 20px;
     
   }
-  .Weather .unit {
+  .Weather .unit  {
     color: rgb(248, 242, 242, 0.7);
     font-size: 30px;
     font-weight: 400;
     position: relative;
     line-height: 1;
-    top: -34px;
+    top: -20px;
     display: inline-flex;
     justify-content: center;
-  
-   
   }
-  .WeatherInfo {
-    border-radius: 8px;
+.WeatherInfo a {
+  text-decoration: none;
+  color: rgb(248, 242, 242, 0.7);
+  font-size: 30px;
+  font-weight: 400;
+  text-shadow: none;
+  opacity: 0.8;
+}
+
+  .WeatherInfo  {
     text-align: center;
-    padding: 10px;
+   padding: 10px;
    
   }
  
@@ -99,11 +107,19 @@
     background-color: rgba(0, 81, 255, 0.5);
     padding: 10px;
   }
+  .ul-container :hover {
+    background-color: rgb(5, 95, 155);
+    transition: 400ms ease-in-out;
+  }
   .row-weather{
     display: flex;
     justify-content:space-evenly;
     
   }
+.col:hover {
+  background-color: rgb(5, 95, 155);
+  transition: 400ms ease-in-out;
+}
  img {
   width: 60px;
  }
@@ -111,4 +127,5 @@
   width: 200px;
   height: 200px;
   padding: 0;
+  
  }
