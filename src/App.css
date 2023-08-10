@@ -80,10 +80,7 @@ a {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transition: 400ms ease-in-out;
 }
-.col-9 .col-3 {
-  display: inline-block;
-  box-sizing: border-box;
-}
+
 .row-submit {
   display: flex;
   padding: 15px;
@@ -93,10 +90,10 @@ a {
   padding: 8px;
   caret-color: rgb(255, 255, 255);
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
     .App {
       max-width: 100%;
-      padding: 5px;
+      padding: 10px;
       margin: 10px;
       border-radius: 0;
       box-shadow: none;
@@ -105,5 +102,16 @@ a {
     .form-control {
       width: 100%;
       caret-color: white;
+    
+    }
+    .col-3 {
+      margin-left: 10px;
+    }
+    .col-9 {
+      width: 100%;
+    }
+    footer, a {
+      letter-spacing: normal;
+      font-size: 8px;
     }
   }

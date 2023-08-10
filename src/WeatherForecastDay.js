@@ -14,11 +14,20 @@ export default function WeatherForecastDay(props) {
   function day() {
     let date = new Date(props.data.time * 1000);
     let day = date.getDay();
-
-    let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  
+    function checkScreenWidth() {
+      let screenWidth = window.innerWidth;
+      if (screenWidth <= 500) {
+        days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      }
+    }
+    checkScreenWidth();
+  
     return days[day];
   }
-
+  
   return (
     <div className="whole-col">
       <div className="WeatherForecast-day">{day()}</div>
@@ -31,7 +40,7 @@ export default function WeatherForecastDay(props) {
         </span>
       </div>
       <div className="WeatherForcast-Day">
-        <img src={props.data.condition.icon_url} alt={props.data.description} />
+        <img className="WeatherForecast-img"src={props.data.condition.icon_url} alt={props.data.description} />
       </div>
     </div>
   );
