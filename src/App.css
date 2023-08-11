@@ -1,23 +1,19 @@
 .App {
-  max-width: 500px;
+  max-width: 600px;
  margin:30px auto;
   margin-top: 0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.5) 0px 1px 0px, rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.5) 0px 16px 48px;
 }
+
 body {
-  background-image:  linear-gradient(rgba(34, 38, 48, 0.2), rgba(45, 46, 58, 0.3)),url("./image-img.jpg/background.jpg");
+  background-image: url("./image-img.jpg/background.jpg");
   background-size: cover;
-  background-repeat:no-repeat;
-margin: 0;
- 
+  background-repeat: no-repeat;
 }
  footer  {
   font-size: 12px;
   letter-spacing: 1.5px;
- text-shadow:1px 1px 1px rgba(5, 1, 56, 0.8);
+ text-shadow:1px 1px 1px rgba(1, 0, 12, 0.8);
  border-radius: 8px;
  color: rgb(245, 245, 248);
  display: flex;
@@ -90,11 +86,11 @@ a {
   padding: 8px;
   caret-color: rgb(255, 255, 255);
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .App {
       max-width: 100%;
       padding: 10px;
-      margin: 10px;
+      margin: 5px;
       border-radius: 0;
       box-shadow: none;
     }
