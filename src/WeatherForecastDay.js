@@ -19,7 +19,7 @@ export default function WeatherForecastDay(props) {
   
     function checkScreenWidth() {
       let screenWidth = window.innerWidth;
-      if (screenWidth <= 500) {
+      if (screenWidth <= 600) {
         days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       }
     }

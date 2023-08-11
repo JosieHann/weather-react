@@ -8,15 +8,14 @@ export default function WeatherInfo(props) {
       <p>
       <FormattedDate date={props.data.date} />
       </p>
+      <h1>{props.data.city}</h1>
       <div>
         <img src={props.data.icon} alt="Clear" id="icon" />
-      </div>
-      <div className="unit">
+        </div>
+        <div className="unit">
         <WeatherTemperature  fahrenheit={props.data.temperature}/>
       </div>
-      <div>
-      <h1>{props.data.city}</h1>
-    </div><div className="ul-container">
+    <div className="ul-container">
         <ul>
           <li>Humidity: {props.data.humidity}%</li>
         </ul>
@@ -28,5 +27,5 @@ export default function WeatherInfo(props) {
         </ul>
       </div>
       </div>
-); 
+);
 }
