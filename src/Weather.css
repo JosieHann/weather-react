@@ -1,6 +1,6 @@
 .Weather {
 background-color: rgb(0, 0, 0,0.7);
-  background.-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
     font-family: Google Sans,Roboto,arial,sans-serif;
     padding: 5px;
@@ -169,4 +169,5 @@ img {
   width: auto;
   max-width: 90%;
 }
+
 }
