@@ -34,6 +34,8 @@ background-color: rgb(0, 0, 0,0.7);
     text-shadow: -1px -1px 3px #020202, 
     2px 2px 4px #000000;
     box-shadow:  rgba(158, 158, 158, 0.4) 0px 3px 8px;
+   font-size: 16px;
+   font-family:Google Sans,Roboto,arial,sans-serif;
   }
   p{
     color: rgb(255, 255, 255);
