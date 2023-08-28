@@ -158,6 +158,9 @@ img {
   padding: 8px 0;
   padding-top: 0;
 }
+.Weather h1 {
+  font-size: 45px;
+}
 .Weather {
   padding: 10px;
 }
